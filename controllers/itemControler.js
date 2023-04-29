@@ -15,7 +15,7 @@ const addItemController = async (req, res) => {
   try {
     const newItem = new itemModel(req.body);
     await newItem.save();
-    res.status(201).send("Items Saved");
+    res.status(201).send("Items Saved sucessfully !!");
   } catch (error) {
     res.status(400).send("error", error);
     console.log(error);
