@@ -22,7 +22,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(morgan("dev"));
 
 // routes
-app.use("/api/items", require("./routes/itemRoutes"));
+app.get("/", (req, res) => {
+  res.send("<h1>POS BACKEND</h1>");
+});
 
 // PORT
 const PORT = process.env.PORT || 8080;
