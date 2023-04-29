@@ -2,7 +2,7 @@ const express = require("express");
 const { getItemControler } = require("../controllers/itemControler");
 const router = express.Router();
 
-// Routes
+// routes
 // Method - get
 router.get("/get-item", getItemControler);
-module.express = router;
+module.exports = router;
