@@ -21,6 +21,7 @@
   box-shadow: 0 0 3px #ccc;
   border-radius: 5px;
   margin: 10px;
+  overflow: auto;
 }
 
 .ant-layout-has-sider {
@@ -43,4 +44,31 @@
   display: flex;
   align-items: center;
   margin-left: 10px;
+}
+
+.ant-layout-header {
+  line-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cart-item {
+  padding-left: 20px;
+  padding-right: 30px;
+  cursor: pointer;
+}
+.cart-item p {
+  margin-top: 10px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100%;
+  height: 100px;
+  width: 100px;
 }
