@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { Layout, Menu } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import img from "../logo/burtique.jpg";
+import Flash from "react-reveal/Flash";
 
 import {
   MenuUnfoldOutlined,
@@ -36,7 +37,9 @@ const DefaultLayout = ({ children }) => {
       {loading && <Spinner></Spinner>}
       <Sider trigger={null} collapsible collapsed={collapsed}>
         <div className="logoimg">
-          <img src={img} alt="/" />
+          <Flash>
+            <img src={img} alt="/" />
+          </Flash>
           <h4 className="text-center text-light font-wight-bold mt-4 ">
             Burtique Fashion
           </h4>
