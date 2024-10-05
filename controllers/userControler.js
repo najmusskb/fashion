@@ -1,6 +1,6 @@
 const userModel = require("../models/userModel");
 
-// login user
+// Login user
 const loginControler = async (req, res) => {
   try {
     const { userId, password } = req.body;
@@ -8,24 +8,30 @@ const loginControler = async (req, res) => {
     if (user) {
       res.status(200).send(user);
     } else {
-      res.json({
-        message: "Login Fail",
-        user,
+      res.status(401).json({
+        message: "Login Failed",
       });
     }
   } catch (error) {
+    res.status(500).json({
+      message: "Internal Server Error",
+      error: error.message,
+    });
     console.log(error);
   }
 };
 
-// register
+// Register user
 const registerController = async (req, res) => {
   try {
     const newUser = new userModel({ ...req.body, verified: true });
     await newUser.save();
-    res.status(201).send("New User Added sucessfully !!");
+    res.status(201).send("New User Added successfully!!");
   } catch (error) {
-    res.status(400).send("error", error);
+    res.status(400).json({
+      message: "Error registering user",
+      error: error.message,
+    });
     console.log(error);
   }
 };
